@@ -16,7 +16,13 @@ $departmentA->setNameDepartment('Stolarka');
 $departmentA->setTypeDepartment('Finanse');
 $departmentA->addEmployee($employee1);
 
-echo 'Pracownicy: ' . PHP_EOL;
-foreach ($departmentA->getEmployees() as $employee) {
-    echo 'Dział: ' . $departmentA->getNameDepartment() . ' Imie: ' . $employee->getNameEmployee() . ' Pensja: ' . $employee->getJobPosition()->getSalary();
+$company = new Company();
+$company->setNameCompany('BudoDach');
+$company->addDepartment($departmentA);
+
+echo 'Pracownicy firmy "' . $company->getNameCompany() . '": ' . PHP_EOL;
+foreach ($company->getDepartments() as $department) {
+    foreach ($department->getEmployees() as $employee) {
+        echo 'Dział: ' . $departmentA->getNameDepartment() . ' Imie: ' . $employee->getNameEmployee() . ' Pensja: ' . $employee->getJobPosition()->getSalary();
+    }
 }

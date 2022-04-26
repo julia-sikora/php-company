@@ -1,5 +1,31 @@
 <?php
 
+class Company
+{
+    private string $nameCompany;
+    private array $departments = [];
+
+    public function addDepartment(Department $department): void
+    {
+        $this->departments [] = $department;
+    }
+
+    public function getDepartments(): array
+    {
+        return $this->departments;
+    }
+
+    public function setNameCompany(string $nameCompany): void
+    {
+        $this->nameCompany = $nameCompany;
+    }
+
+    public function getNameCompany(): string
+    {
+        return $this->nameCompany;
+    }
+}
+
 class Department
 {
     private array $employees = [];
