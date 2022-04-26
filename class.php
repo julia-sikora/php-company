@@ -30,7 +30,6 @@ class Department
 {
     private array $employees = [];
     private string $nameDepartment;
-    private string $typeDepartment;
 
     public function addEmployee(Employee $employee): void
     {
@@ -50,16 +49,6 @@ class Department
     public function getNameDepartment(): string
     {
         return $this->nameDepartment;
-    }
-
-    public function setTypeDepartment(string $typeDepartment): void
-    {
-        $this->typeDepartment = $typeDepartment;
-    }
-
-    public function getTypeDepartment(): string
-    {
-        return $this->typeDepartment;
     }
 }
 
