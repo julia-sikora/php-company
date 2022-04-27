@@ -44,9 +44,7 @@ $company->setNameCompany('BudoDach');
 $company->addDepartment($departmentA);
 $company->addDepartment($departmentB);
 
-echo 'Pracownicy firmy "' . $company->getNameCompany() . '": ' . PHP_EOL;
-foreach ($company->getDepartments() as $department) {
-    foreach ($department->getEmployees() as $employee) {
-        echo 'Dział: ' . $department->getNameDepartment() . ' Imie: ' . $employee->getNameEmployee() . ' Pensja: ' . $employee->getJobPosition()->getSalary() . PHP_EOL;
-    }
-}
+$printer = new Printer();
+//$printer->printNameCompany($company);
+//$printer->printNameDepartment($departmentA);
+$printer->printCompanyInfo($company);

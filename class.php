@@ -115,3 +115,27 @@ class JobPosition
         return $this->salary;
     }
 }
+
+class Printer
+{
+    public function printNameCompany(Company $company): void
+    {
+        print PHP_EOL . "Nazwa firmy: " . $company->getNameCompany() . PHP_EOL;
+    }
+
+    public function printNameDepartment(Department $department): void
+    {
+        print "Dział: " . $department->getNameDepartment();
+    }
+
+    public function printCompanyInfo(Company $company): void
+    {
+        $this->printNameCompany($company);
+        echo 'Pracownicy: ' . PHP_EOL;
+        foreach ($company->getDepartments() as $department) {
+            foreach ($department->getEmployees() as $employee) {
+                echo 'Dział: ' . $department->getNameDepartment() . ' Imie: ' . $employee->getNameEmployee() . ' Pensja: ' . $employee->getJobPosition()->getSalary() . PHP_EOL;
+            }
+        }
+    }
+}
