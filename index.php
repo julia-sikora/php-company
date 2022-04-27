@@ -48,3 +48,4 @@ $printer = new Printer();
 //$printer->printNameCompany($company);
 //$printer->printNameDepartment($departmentA);
 $printer->printCompanyInfo($company);
+$printer->printCompanyEmployeesCosts($company);

@@ -138,4 +138,16 @@ class Printer
             }
         }
     }
+
+    public function printCompanyEmployeesCosts(Company $company): void
+    {
+        $sum = 0;
+        foreach ($company->getDepartments() as $department) {
+            foreach ($department->getEmployees() as $employee) {
+                $sum += $employee->getJobPosition()->getSalary();
+                //$sum = $sum + $employee->getJobPosition()->getSalary();
+            }
+        }
+        echo 'Koszty pracowników dla firmy ' . $company->getNameCompany() . ': ' . $sum;
+    }
 }
